@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --shiny-cta-bg: #000000;
+  --shiny-cta-bg-subtle: #1a1818;
+  --shiny-cta-fg: #ffffff;
+  --shiny-cta-highlight: #0077ff; /* NOVO - Azul vibrante */
+  --shiny-cta-highlight-subtle: #00bfff;
+}
 
 * {
   box-sizing: border-box;
@@ -15,6 +24,51 @@ body {
   font-family: Abel, Helvetica, sans-serif;
   color: #222;
   background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+h4 {
+  font-size: 4.5rem;
+}
+
+h5 {
+  font-size: 4rem;
+}
+
+h6 {
+  font-size: 3.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 3rem;
 }
 
 .section-web {
@@ -57,12 +111,14 @@ body {
 }
 
 .apresentation-text h1 {
+  /* Este H1 específico sobrepõe o H1 global */
   font-size: 5rem;
   margin-bottom: 2rem;
   letter-spacing: 0.1rem;
 }
 
 .apresentation-text p {
+  /* Este P específico sobrepõe o P global */
   font-size: 2.2rem;
   margin-bottom: 4rem;
   letter-spacing: 0.1rem;
@@ -73,14 +129,6 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-:root {
-  --shiny-cta-bg: #000000;
-  --shiny-cta-bg-subtle: #1a1818;
-  --shiny-cta-fg: #ffffff;
-  --shiny-cta-highlight: #0077FF; /* NOVO - Azul vibrante */
-  --shiny-cta-highlight-subtle: #00BFFF; /* NOVO - Azul claro (Ciano) */
 }
 
 @property --gradient-angle {
@@ -117,9 +165,9 @@ body {
   overflow: hidden;
   cursor: pointer;
   outline-offset: 4px;
-  padding: 1.25rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   font-family: inherit;
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1.2;
   border: 1px solid transparent;
@@ -137,7 +185,7 @@ body {
       )
       border-box;
   box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
-  text-decoration: none;
+  text-decoration: none; /* O 'a' global já faz isso, mas é bom manter por garantia */
 }
 
 .shiny-cta::before,
@@ -182,7 +230,7 @@ body {
   z-index: -1;
 }
 
-/* BRILHO INTERNO (correto) */
+/* BRILHO INTERNO */
 .shiny-cta::after {
   --animation: shimmer linear infinite;
   width: 100%;
@@ -197,7 +245,6 @@ body {
   opacity: 0.6;
 }
 
-/* brilho interno leve que acompanha a rotação */
 .shiny-cta span::before {
   --size: calc(100% + 1rem);
   width: var(--size);
@@ -268,8 +315,6 @@ body {
     scale: 1.2;
   }
 }
-
-
 
 /* --- Estilos da Navbar --- */
 .navbar {
@@ -359,6 +404,7 @@ body {
   opacity: 0;
   font-size: 1.8rem;
   z-index: 10;
+  margin-bottom: 0; /* Neutraliza o 'p' global */
 }
 
 /* --- BARS (Ícone Hamburger) --- */
@@ -399,7 +445,7 @@ body {
 /* TEXTOS DO MENU */
 .menu > ul > li {
   color: #f9f9ed;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* --- FIM DOS NOVOS ESTILOS --- */
   cursor: pointer;
   padding: 1rem 0;
   width: 16rem;
@@ -453,14 +499,16 @@ body {
 }
 
 .section-header h2 {
+  /* Este H2 sobrepõe o H2 global */
   font-size: 4rem;
   margin-bottom: 1.5rem;
   color: #222;
 }
 
 .section-header p {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
   color: #555;
+  margin-bottom: 0;
 }
 
 /* grid de 4 colunas usando CSS Grid */
@@ -473,7 +521,7 @@ body {
 /* Estilo de cada card */
 .feature-card {
   background: #fff;
-  padding: 3rem 3.5rem;
+  padding: 5rem 3.5rem;
   text-align: left;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
@@ -493,7 +541,8 @@ body {
 
 /* Estilo do título do card */
 .feature-card h3 {
-  font-size: 2.2rem;
+  /* Este H3 sobrepõe o H3 global */
+  font-size: 2.4rem;
   color: #222;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -501,9 +550,133 @@ body {
 
 /* Estilo do texto de descrição do card */
 .feature-card p {
-  font-size: 1.8rem;
+  /* Este P sobrepõe o P global */
+  font-size: 2rem;
   color: #555;
   line-height: 1.6;
+  margin-bottom: 0; /* Neutraliza o 'p' global */
+}
+
+.cta-jorney {
+  text-align: center;
+  margin-bottom: 6rem;
+  z-index: 1;
+}
+
+.cta-bg {
+  background: #175f88;
+  z-index: 0;
+}
+
+.cta-jorney h2 {
+  font-size: 4rem;
+  color: #f9f9ed;
+  margin-bottom: 2rem;
+}
+
+.cta-jorney p {
+  font-size: 2.6rem;
+  color: #f1eded;
+}
+
+/* Estilos para o botão CTA */
+.cta-button {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #f9f9ed;
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f9f9ed;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #111;
+  color: #f1eded;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-color: #111;
+}
+
+/* --- Estilos do Footer (Atualizados) --- */
+.footer-bg {
+  background: #111;
+  color: #aaa;
+  padding: 6rem 0 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-grid h4 {
+  font-size: 2rem; /* Um pouco menor para visual limpo */
+  color: #f9f9ed;
+  margin-bottom: 2rem;
+  text-transform: none; /* Removido uppercase da imagem */
+  letter-spacing: normal; /* Removido letter-spacing */
+}
+
+.footer-grid p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 0; /* Resetar o margin-bottom global */
+}
+
+/* Coluna de Contato (Nova) */
+.footer-contact p {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem; /* Espaçamento entre os itens de contato */
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  font-size: 1.6rem; /* Tamanho do ícone */
+  color: #f9f9ed; /* Ícones brancos */
+  margin-right: 1.2rem; /* Espaço entre ícone e texto */
+  width: 20px; /* Largura fixa para alinhamento */
+  text-align: center;
+}
+
+
+/* Removido .footer-links (Não mais usado) */
+
+.footer-social a {
+  color: #aaa;
+  font-size: 2.8rem;
+  margin-right: 1.5rem;
+  /* ATUALIZADO: Adicionada transição para sombra e transformação */
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--shiny-cta-highlight-subtle);
+  /* ADICIONADO: Efeito de brilho (glow) */
+  text-shadow: 0 0 8px var(--shiny-cta-highlight-subtle),
+               0 0 12px var(--shiny-cta-highlight-subtle);
+  /* ADICIONADO: Efeito de "pop" sutil */
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid #333; /* Linha divisória (como na imagem) */
+}
+
+.footer-bottom p {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+  color: #777; /* Cor mais sutil para o copyright */
 }
 
 /* Responsividade */
@@ -521,4 +694,19 @@ body {
   .section-header h2 {
     font-size: 3.2rem;
   }
+
+  /* --- Footer Responsivo --- */
+  .footer-grid {
+    grid-template-columns: 1fr; /* Coluna única */
+    text-align: left; /* Alinhar à esquerda no mobile (mais legível) */
+  }
+
+  .footer-social {
+    text-align: left; /* Alinhar ícones à esquerda também */
+  }
+
+  .footer-social a {
+    margin: 0 1.5rem 0 0; /* Ajustar margens dos ícones sociais */
+  }
 }
+
