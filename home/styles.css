@@ -2,28 +2,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 :root {
-  --shiny-cta-bg: #000000;
-  --shiny-cta-bg-subtle: #1a1818;
-  --shiny-cta-fg: #ffffff;
-  --shiny-cta-highlight: #0077ff; /* NOVO - Azul vibrante */
-  --shiny-cta-highlight-subtle: #00bfff;
+--shiny-cta-bg: #000000;
+--shiny-cta-bg-subtle: #1a1818;
+--shiny-cta-fg: #ffffff;
+--shiny-cta-highlight: #0077ff; /* NOVO - Azul vibrante */
+--shiny-cta-highlight-subtle: #00bfff;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+ font-size: 62.5%;
+ scroll-behavior: smooth;
 }
 
 body {
-  font-family: Abel, Helvetica, sans-serif;
-  color: #222;
-  background: #fff;
+ font-family: Abel, Helvetica, sans-serif;
+ color: #222;
+ background: #fff;
 }
 
 h1,
@@ -32,534 +32,537 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+ font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-  font-size: 6rem;
-  text-transform: uppercase;
+ font-size: 6rem;
+ text-transform: uppercase;
 }
 
 h2 {
-  font-size: 6rem;
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-  line-height: 1.2;
+ font-size: 6rem;
+ margin-bottom: 5rem;
+ text-transform: uppercase;
+ line-height: 1.2;
 }
 
 h3 {
-  font-size: 5rem;
+ font-size: 5rem;
 }
 
 h4 {
-  font-size: 4.5rem;
+ font-size: 4.5rem;
 }
 
 h5 {
-  font-size: 4rem;
+ font-size: 4rem;
 }
 
 h6 {
-  font-size: 3.5rem;
+ font-size: 3.5rem;
 }
 
 a {
-  text-decoration: none;
+ text-decoration: none;
 }
 
 p {
-  margin-bottom: 3rem;
+ margin-bottom: 3rem;
 }
 
 .section-web {
-  min-height: 100vh;
+ min-height: 100vh;
 }
 
 .main-content {
-  width: 70%;
-  max-width: 120rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 8rem;
+ width: 70%;
+ max-width: 120rem;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 8rem;
 }
 
 .main-bg > .main-content {
-  padding: 0;
+ padding: 0;
 }
 
 .main-bg {
-  background: linear-gradient(
-      to bottom,
-      rgba(10, 10, 10, 0.9),
-      rgba(10, 10, 10, 0.7)
-    ),
-    url(/img/bjj_bg.png);
-  background-size: cover;
-  background-position: center center;
-  color: #f9f9ed;
+ background: linear-gradient(
+   to bottom,
+   rgba(10, 10, 10, 0.9),
+   rgba(10, 10, 10, 0.7)
+ ),
+ url(/img/bjj_bg.png);
+ background-size: cover;
+ background-position: center center;
+ color: #f9f9ed;
 }
 
 .apresentation-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: #f9f9ed;
-  text-align: center;
-  padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ color: #f9f9ed;
+ text-align: center;
+ padding: 2rem;
 }
 
 .apresentation-text h1 {
-  /* Este H1 específico sobrepõe o H1 global */
-  font-size: 5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.1rem;
+ font-size: 5rem;
+ margin-bottom: 2rem;
+ letter-spacing: 0.1rem;
 }
 
 .apresentation-text p {
-  /* Este P específico sobrepõe o P global */
-  font-size: 2.2rem;
-  margin-bottom: 4rem;
-  letter-spacing: 0.1rem;
+ font-size: 2.2rem;
+ margin-bottom: 4rem;
+ letter-spacing: 0.1rem;
 }
 
 .apresentation-buttons {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+ display: flex;
+ gap: 2rem;
+ flex-wrap: wrap;
+ justify-content: center;
 }
 
 @property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+ syntax: "<angle>";
+ initial-value: 0deg;
+ inherits: false;
 }
 
 @property --gradient-angle-offset {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+ syntax: "<angle>";
+ initial-value: 0deg;
+ inherits: false;
 }
 
 @property --gradient-percent {
-  syntax: "<percentage>";
-  initial-value: 5%;
-  inherits: false;
+ syntax: "<percentage>";
+ initial-value: 5%;
+ inherits: false;
 }
 
 @property --gradient-shine {
-  syntax: "<color>";
-  initial-value: white;
-  inherits: false;
+ syntax: "<color>";
+ initial-value: white;
+ inherits: false;
 }
 
 /* BOTÃO PRINCIPAL */
 .shiny-cta {
-  --animation: gradient-angle linear infinite;
-  --duration: 3s;
-  --shadow-size: 2px;
-  isolation: isolate;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  outline-offset: 4px;
-  padding: 1.5rem 2.5rem;
-  font-family: inherit;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  color: var(--shiny-cta-fg);
-  background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
-      padding-box,
-    conic-gradient(
-        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
-        transparent,
-        var(--shiny-cta-highlight) var(--gradient-percent),
-        var(--gradient-shine) calc(var(--gradient-percent) * 2),
-        var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
-        transparent calc(var(--gradient-percent) * 4)
-      )
-      border-box;
-  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
-  text-decoration: none; /* O 'a' global já faz isso, mas é bom manter por garantia */
+--animation: gradient-angle linear infinite;
+--duration: 3s;
+--shadow-size: 2px;
+ isolation: isolate;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ outline-offset: 4px;
+ padding: 1.5rem 2.5rem;
+ font-family: inherit;
+ font-size: 2rem;
+ font-weight: 600;
+ line-height: 1.2;
+ border: 1px solid transparent;
+ border-radius: 10px;
+ color: var(--shiny-cta-fg);
+ background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
+   padding-box,
+ conic-gradient(
+  from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+  transparent,
+  var(--shiny-cta-highlight) var(--gradient-percent),
+  var(--gradient-shine) calc(var(--gradient-percent) * 2),
+  var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+  transparent calc(var(--gradient-percent) * 4)
+ )
+   border-box;
+ box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+ text-decoration: none;
 }
 
 .shiny-cta::before,
 .shiny-cta::after,
 .shiny-cta span::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset-inline-start: 50%;
-  inset-block-start: 50%;
-  translate: -50% -50%;
-  z-index: -1;
+ content: "";
+ pointer-events: none;
+ position: absolute;
+ inset-inline-start: 50%;
+ inset-block-start: 50%;
+ translate: -50% -50%;
+ z-index: -1;
 }
 
 .shiny-cta:active {
-  translate: 0 1px;
+ translate: 0 1px;
 }
 
 /* PONTOS INTERIORES */
 .shiny-cta::before {
-  --size: calc(100% - var(--shadow-size) * 3);
-  --position: 2px;
-  --space: calc(var(--position) * 2);
-  width: var(--size);
-  height: var(--size);
-  background: radial-gradient(
-      circle at var(--position) var(--position),
-      white calc(var(--position) / 4),
-      transparent 0
-    )
-    padding-box;
-  background-size: var(--space) var(--space);
-  background-repeat: space;
-  mask-image: conic-gradient(
-    from calc(var(--gradient-angle) + 45deg),
-    black,
-    transparent 10% 90%,
-    black
-  );
-  border-radius: inherit;
-  opacity: 0.4;
-  z-index: -1;
+--size: calc(100% - var(--shadow-size) * 3);
+--position: 2px;
+--space: calc(var(--position) * 2);
+ width: var(--size);
+ height: var(--size);
+ background: radial-gradient(
+   circle at var(--position) var(--position),
+   white calc(var(--position) / 4),
+   transparent 0
+ )
+ padding-box;
+ background-size: var(--space) var(--space);
+ background-repeat: space;
+ mask-image: conic-gradient(
+ from calc(var(--gradient-angle) + 45deg),
+ black,
+ transparent 10% 90%,
+ black
+);
+ border-radius: inherit;
+ opacity: 0.4;
+ z-index: -1;
 }
 
 /* BRILHO INTERNO */
 .shiny-cta::after {
-  --animation: shimmer linear infinite;
-  width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(
-    -50deg,
-    transparent,
-    var(--shiny-cta-highlight),
-    transparent
-  );
-  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
-  opacity: 0.6;
+--animation: shimmer linear infinite;
+ width: 100%;
+ aspect-ratio: 1;
+ background: linear-gradient(
+ -50deg,
+ transparent,
+ var(--shiny-cta-highlight),
+ transparent
+);
+ mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+ opacity: 0.6;
 }
 
 .shiny-cta span::before {
-  --size: calc(100% + 1rem);
-  width: var(--size);
-  height: var(--size);
-  box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
-  opacity: 0;
-  transition: opacity var(--transition);
-  animation: calc(var(--duration) * 1.5) breathe linear infinite;
+--size: calc(100% + 1rem);
+ width: var(--size);
+ height: var(--size);
+ box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+ opacity: 0;
+ transition: opacity var(--transition);
+ animation: calc(var(--duration) * 1.5) breathe linear infinite;
 }
 
 /* animações */
 .shiny-cta {
-  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
-  transition: var(--transition);
-  transition-property: --gradient-angle-offset, --gradient-percent,
-    --gradient-shine;
+--transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+ transition: var(--transition);
+ transition-property: --gradient-angle-offset, --gradient-percent,
+ --gradient-shine;
 }
 
 .shiny-cta,
 .shiny-cta::before,
 .shiny-cta::after {
-  animation: var(--animation) var(--duration),
-    var(--animation) calc(var(--duration) / 0.4) reverse paused;
-  animation-composition: add;
+ animation: var(--animation) var(--duration),
+ var(--animation) calc(var(--duration) / 0.4) reverse paused;
+ animation-composition: add;
 }
 
 .shiny-cta span::before {
-  transition: opacity var(--transition);
-  animation: calc(var(--duration) * 1.5) breathe linear infinite;
+ transition: opacity var(--transition);
+ animation: calc(var(--duration) * 1.5) breathe linear infinite;
 }
 
 /* HOVER */
 .shiny-cta:is(:hover, :focus-visible) {
-  --gradient-percent: 20%;
-  --gradient-angle-offset: 95deg;
-  --gradient-shine: var(--shiny-cta-highlight-subtle);
+--gradient-percent: 20%;
+--gradient-angle-offset: 95deg;
+--gradient-shine: var(--shiny-cta-highlight-subtle);
 }
 
 .shiny-cta:is(:hover, :focus-visible),
 .shiny-cta:is(:hover, :focus-visible)::before,
 .shiny-cta:is(:hover, :focus-visible)::after {
-  animation-play-state: running;
+ animation-play-state: running;
 }
 
 .shiny-cta:is(:hover, :focus-visible) span::before {
-  opacity: 1;
+ opacity: 1;
 }
 
 /* animações do Ryan */
 @keyframes gradient-angle {
-  to {
-    --gradient-angle: 360deg;
-  }
+ to {
+ --gradient-angle: 360deg;
+}
 }
 
 @keyframes shimmer {
-  to {
-    rotate: 360deg;
-  }
+ to {
+ rotate: 360deg;
+}
 }
 
 @keyframes breathe {
-  from,
-  to {
-    scale: 1;
-  }
-  50% {
-    scale: 1.2;
-  }
+ from,
+ to {
+ scale: 1;
+}
+ 50% {
+ scale: 1.2;
+}
 }
 
-/* --- Estilos da Navbar --- */
+/* Estilos da Navbar */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 10rem;
-  background: #222;
-  z-index: 10;
-  font-family: Abel, Helvetica, sans-serif;
-  padding: 0 2rem;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 10rem;
+ background: #222;
+ z-index: 10;
+ font-family: Abel, Helvetica, sans-serif;
+ padding: 0 2rem;
 }
 
-/* --- Estilos do texto/logo centralizado --- */
+/* Estilos do texto/logo centralizado */
 .navbar-brand {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #f9f9ed;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: #f9f9ed;
 }
 
 /* LOGO */
 .navbar-brand > a {
-  margin: 0;
-  font-size: 3rem;
-  letter-spacing: 0.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  background: linear-gradient(90deg, #aaa, #f9f9ed, #aaa);
-  background-size: 300% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.5s ease-out;
+ margin: 0;
+ font-size: 3rem;
+ letter-spacing: 0.1rem;
+ font-weight: bold;
+ text-decoration: none;
+ background: linear-gradient(90deg, #aaa, #f9f9ed, #aaa);
+ background-size: 300% 100%;
+ background-position: 100% 0;
+-webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ transition: background-position 0.5s ease-out;
+ text-align: center;
 }
 
 .navbar-brand > a:hover {
-  background-position: 0% 0;
+ background-position: 0% 0;
 }
 
-/* --- Estilos NO TRIGGER --- */
+/* Estilos NO TRIGGER */
 .menu-trigger {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: auto;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 2rem;
-  z-index: 11;
+ position: absolute;
+ top: 0;
+ right: 0;
+ height: 100%;
+ width: auto;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ padding: 0 2rem;
+ z-index: 11;
 }
 
 /* Animações de hover do trigger */
 .menu-trigger:hover > .bars > span:first-of-type {
-  transform: translateY(0.9rem) rotate(45deg);
+ transform: translateY(0.9rem) rotate(45deg);
 }
 .menu-trigger:hover > .bars > span:nth-of-type(2) {
-  opacity: 0;
+ opacity: 0;
 }
 .menu-trigger:hover > .bars > span:last-of-type {
-  transform: translateY(-0.9rem) rotate(-45deg);
+ transform: translateY(-0.9rem) rotate(-45deg);
 }
 .menu-trigger:hover > .menu {
-  transform: translateX(0);
+ transform: translateX(0);
 }
 .menu-trigger:hover > .menu > ul > li > a {
-  transform: translateY(0);
+ transform: translateY(0);
 }
 .menu-trigger:hover > p {
-  transform: none;
-  opacity: 1;
+ transform: none;
+ opacity: 1;
 }
 
 /* Texto "MENU" */
 .menu-trigger > p {
-  color: #aaa;
-  margin-left: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.12rem;
-  transition: all 0.4s ease;
-  opacity: 0;
-  font-size: 1.8rem;
-  z-index: 10;
-  margin-bottom: 0; /* Neutraliza o 'p' global */
+ color: #aaa;
+ margin-left: 1.5rem;
+ font-weight: bold;
+ letter-spacing: 0.12rem;
+ transition: all 0.4s ease;
+ opacity: 0;
+ font-size: 1.8rem;
+ z-index: 10;
+ margin-bottom: 0;
 }
 
-/* --- BARS (Ícone Hamburger) --- */
+/* BARS (Ícone Hamburger) */
 .bars {
-  display: flex;
-  flex-direction: column;
-  width: 3rem;
-  height: 2.2rem;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
+ display: flex;
+ flex-direction: column;
+ width: 3rem;
+ height: 2.2rem;
+ align-items: center;
+ justify-content: space-between;
+ z-index: 10;
 }
 .bars > span {
-  width: 100%;
-  height: 0.4rem;
-  background: #666;
-  transition: all 0.4s ease;
-  transform-origin: center;
+ width: 100%;
+ height: 0.4rem;
+ background: #666;
+ transition: all 0.4s ease;
+ transform-origin: center;
 }
 
-/* --- MENU (Painel) --- */
+/* MENU (Painel) */
 .menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #222;
-  height: 100vh;
-  border-left: 1px solid #444;
-  transform: translateX(100%);
-  transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  padding: 5rem 5rem 5rem 10rem;
-  will-change: transform;
+ position: absolute;
+ top: 0;
+ right: 0;
+ background: #222;
+ height: 100vh;
+ border-left: 1px solid #444;
+ transform: translateX(100%);
+ transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+ padding: 5rem 5rem 5rem 10rem;
+ will-change: transform;
 }
 .menu > ul:hover > li:not(:hover) {
-  color: rgba(249, 249, 237, 0.5);
+ color: rgba(249, 249, 237, 0.5);
 }
 
 /* TEXTOS DO MENU */
 .menu > ul > li {
-  color: #f9f9ed;
-  font-size: 2.5rem; /* --- FIM DOS NOVOS ESTILOS --- */
-  cursor: pointer;
-  padding: 1rem 0;
-  width: 16rem;
-  overflow: hidden;
+ color: #f9f9ed;
+ font-size: 2.5rem;
+ cursor: pointer;
+ padding: 1rem 0;
+ width: 16rem;
+ overflow: hidden;
 }
 .menu > ul > li:first-of-type {
-  padding-top: 0;
+ padding-top: 0;
 }
 .menu > ul > li:last-of-type {
-  padding-bottom: 0;
+ padding-bottom: 0;
 }
 
 /* Animações de entrada dos itens do menu */
 .menu > ul > li:nth-of-type(1) > a {
-  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s,
-    color 0.2s ease;
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s,
+ color 0.2s ease;
 }
 .menu > ul > li:nth-of-type(2) > a {
-  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s,
-    color 0.2s ease;
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s,
+ color 0.2s ease;
 }
 .menu > ul > li:nth-of-type(3) > a {
-  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s,
-    color 0.2s ease;
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s,
+ color 0.2s ease;
 }
 .menu > ul > li:nth-of-type(4) > a {
-  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s,
-    color 0.2s ease;
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s,
+ color 0.2s ease;
 }
 .menu > ul > li:nth-of-type(5) > a {
-  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s,
-    color 0.2s ease;
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s,
+ color 0.2s ease;
 }
 
 /* Estilos dos links do menu */
 .menu > ul > li > a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  transform: translateY(calc(100% + 1rem));
+ display: block;
+ color: inherit;
+ text-decoration: none;
+ transform: translateY(calc(100% + 1rem));
 }
 
 #por-que {
-  background: #f1eded;
+ background: #f1eded;
 }
 
 /* Centraliza o título e o subtítulo. */
 .section-header {
-  text-align: center;
-  margin-bottom: 6rem;
+ text-align: center;
+ margin-bottom: 6rem;
 }
 
 .section-header h2 {
-  /* Este H2 sobrepõe o H2 global */
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  color: #222;
+ font-size: 4rem;
+ margin-bottom: 1.5rem;
+ color: #222;
 }
 
 .section-header p {
-  font-size: 2.6rem;
-  color: #555;
-  margin-bottom: 0;
+ font-size: 2.6rem;
+ color: #555;
+ margin-bottom: 0;
 }
 
 /* grid de 4 colunas usando CSS Grid */
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 3rem;
+ justify-items: center;
+ align-items: stretch;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 2rem;
 }
 
-/* Estilo de cada card */
 .feature-card {
-  background: #fff;
-  padding: 5rem 3.5rem;
-  text-align: left;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+ background: #fff;
+ padding: 3rem;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: left;
+ transition: all 0.3s ease;
+ border: 1px solid #eee;
+ width: 100%;
+ max-width: 36rem;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+ transform: translateY(-6px);
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Estilo do ícone (cor, tamanho) */
 .feature-card i {
-  font-size: 4.5rem;
-  color: #1f7aaf;
-  margin-bottom: 2rem;
+ font-size: 3.6rem;
+ color: #175f88;
+ margin-bottom: 1.5rem;
 }
 
-/* Estilo do título do card */
 .feature-card h3 {
-  /* Este H3 sobrepõe o H3 global */
-  font-size: 2.4rem;
-  color: #222;
-  margin-bottom: 1rem;
-  font-weight: bold;
+ font-size: 1.8rem;
+ font-weight: 700;
+ color: #111;
+ margin-bottom: 0.8rem;
 }
 
-/* Estilo do texto de descrição do card */
 .feature-card p {
-  /* Este P sobrepõe o P global */
-  font-size: 2rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 0; /* Neutraliza o 'p' global */
+ font-size: 1.5rem;
+ color: #555;
+ line-height: 1.6;
+ margin: 0;
 }
 
 .cta-jorney {
   text-align: center;
-  margin-bottom: 6rem;
   z-index: 1;
 }
 
@@ -579,7 +582,6 @@ p {
   color: #f1eded;
 }
 
-/* Estilos para o botão CTA */
 .cta-button {
   display: inline-block;
   background: transparent;
@@ -603,7 +605,6 @@ p {
   border-color: #111;
 }
 
-/* --- Estilos do Footer (Atualizados) --- */
 .footer-bg {
   background: #111;
   color: #aaa;
@@ -612,101 +613,164 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
   margin-bottom: 4rem;
 }
 
 .footer-grid h4 {
-  font-size: 2rem; /* Um pouco menor para visual limpo */
+  font-size: 2rem;
   color: #f9f9ed;
   margin-bottom: 2rem;
-  text-transform: none; /* Removido uppercase da imagem */
-  letter-spacing: normal; /* Removido letter-spacing */
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .footer-grid p {
   font-size: 1.8rem;
   line-height: 1.6;
-  margin-bottom: 0; /* Resetar o margin-bottom global */
+  margin-bottom: 0;
 }
 
-/* Coluna de Contato (Nova) */
 .footer-contact p {
   font-size: 1.8rem;
-  margin-bottom: 1.5rem; /* Espaçamento entre os itens de contato */
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
 }
 
 .footer-contact i {
-  font-size: 1.6rem; /* Tamanho do ícone */
-  color: #f9f9ed; /* Ícones brancos */
-  margin-right: 1.2rem; /* Espaço entre ícone e texto */
-  width: 20px; /* Largura fixa para alinhamento */
+  font-size: 1.6rem;
+  color: #f9f9ed;
+  margin-right: 1.2rem;
+  width: 2rem;
   text-align: center;
 }
-
-
-/* Removido .footer-links (Não mais usado) */
 
 .footer-social a {
   color: #aaa;
   font-size: 2.8rem;
   margin-right: 1.5rem;
-  /* ATUALIZADO: Adicionada transição para sombra e transformação */
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
-  color: var(--shiny-cta-highlight-subtle);
-  /* ADICIONADO: Efeito de brilho (glow) */
-  text-shadow: 0 0 8px var(--shiny-cta-highlight-subtle),
-               0 0 12px var(--shiny-cta-highlight-subtle);
-  /* ADICIONADO: Efeito de "pop" sutil */
   transform: scale(1.1);
 }
 
+.footer-social a[aria-label="Instagram"]:hover {
+  color: #E1306C;
+  text-shadow: 0 0 8px #E1306C,
+        0 0 12px #E1306C;
+}
+
+.footer-social a[aria-label="Facebook"]:hover {
+  color: #1877F2;
+  text-shadow: 0 0 8px #1877F2,
+       0 0 12px #1877F2;
+}
+
+.footer-social a[aria-label="YouTube"]:hover {
+  color: #FF0000;
+  text-shadow: 0 0 8px #FF0000,
+      0 0 12px #FF0000;
+}
+
 .footer-bottom {
-  text-align: center;
-  padding-top: 3rem;
-  border-top: 1px solid #333; /* Linha divisória (como na imagem) */
+ text-align: center;
+ padding-top: 3rem;
+ border-top: 1px solid #333;
 }
 
 .footer-bottom p {
-  font-size: 1.6rem;
-  margin-bottom: 0;
-  color: #777; /* Cor mais sutil para o copyright */
+ font-size: 1.6rem;
+ margin-bottom: 0;
+ color: #777;
 }
 
-/* Responsividade */
+@media (min-width: 1024px) and (max-width: 1444px) {
+ #por-que {
+  background: #f9f9f9;
+  padding: 8rem 0;
+ }
+
+ .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem;
+  align-items: stretch;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+ }
+
+ .feature-card {
+  background: #fff;
+  padding: 3rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+ }
+
+ .feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+ }
+
+ .feature-card i {
+  font-size: 3.8rem;
+  color: #175f88;
+  margin-bottom: 1.8rem;
+ }
+
+ .feature-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+ }
+
+ .feature-card p {
+  font-size: 1.7rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+ }
+}
+
 @media (max-width: 992px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.features-grid {
+ grid-template-columns: repeat(2, 1fr);
+}
 }
 
 @media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-header h2 {
-    font-size: 3.2rem;
-  }
-
-  /* --- Footer Responsivo --- */
-  .footer-grid {
-    grid-template-columns: 1fr; /* Coluna única */
-    text-align: left; /* Alinhar à esquerda no mobile (mais legível) */
-  }
-
-  .footer-social {
-    text-align: left; /* Alinhar ícones à esquerda também */
-  }
-
-  .footer-social a {
-    margin: 0 1.5rem 0 0; /* Ajustar margens dos ícones sociais */
-  }
+.features-grid {
+ grid-template-columns: 1fr;
 }
 
+.section-header h2 {
+ font-size: 3.2rem;
+}
+.footer-grid {
+ grid-template-columns: 1fr;
+ text-align: left;
+}
+
+.footer-social {
+ text-align: left;
+}
+
+.footer-social a {
+ margin: 0 1.5rem 0 0;
+}
+}

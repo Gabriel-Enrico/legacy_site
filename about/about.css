@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+--shiny-cta-bg: #000000;
+--shiny-cta-bg-subtle: #1a1818;
+--shiny-cta-fg: #ffffff;
+--shiny-cta-highlight: #0077ff; /* NOVO - Azul vibrante */
+--shiny-cta-highlight-subtle: #00bfff;
+}
+
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+html {
+ font-size: 62.5%;
+ scroll-behavior: smooth;
+}
+
+body {
+ font-family: Abel, Helvetica, sans-serif;
+ color: #222;
+ background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+ font-size: 6rem;
+ text-transform: uppercase;
+}
+
+h2 {
+ font-size: 6rem;
+ margin-bottom: 5rem;
+ text-transform: uppercase;
+ line-height: 1.2;
+}
+
+h3 {
+ font-size: 5rem;
+}
+
+h4 {
+ font-size: 4.5rem;
+}
+
+h5 {
+ font-size: 4rem;
+}
+
+h6 {
+ font-size: 3.5rem;
+}
+
+a {
+ text-decoration: none;
+}
+
+p {
+ margin-bottom: 3rem;
+}
+
+.section-web {
+ min-height: 100vh;
+}
+
+.main-content {
+ width: 70%;
+ max-width: 120rem;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 8rem;
+}
+
+/* Estilos da Navbar */
+.navbar {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 10rem;
+ background: #222;
+ z-index: 10;
+ font-family: Abel, Helvetica, sans-serif;
+ padding: 0 2rem;
+}
+
+/* Estilos do texto/logo centralizado */
+.navbar-brand {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: #f9f9ed;
+}
+
+/* LOGO */
+.navbar-brand > a {
+ margin: 0;
+ font-size: 3rem;
+ letter-spacing: 0.1rem;
+ font-weight: bold;
+ text-decoration: none;
+ background: linear-gradient(90deg, #aaa, #f9f9ed, #aaa);
+ background-size: 300% 100%;
+ background-position: 100% 0;
+-webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ transition: background-position 0.5s ease-out;
+}
+
+.navbar-brand > a:hover {
+ background-position: 0% 0;
+}
+
+/* Estilos NO TRIGGER */
+.menu-trigger {
+ position: absolute;
+ top: 0;
+ right: 0;
+ height: 100%;
+ width: auto;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ padding: 0 2rem;
+ z-index: 11;
+}
+
+/* Animações de hover do trigger */
+.menu-trigger:hover > .bars > span:first-of-type {
+ transform: translateY(0.9rem) rotate(45deg);
+}
+.menu-trigger:hover > .bars > span:nth-of-type(2) {
+ opacity: 0;
+}
+.menu-trigger:hover > .bars > span:last-of-type {
+ transform: translateY(-0.9rem) rotate(-45deg);
+}
+.menu-trigger:hover > .menu {
+ transform: translateX(0);
+}
+.menu-trigger:hover > .menu > ul > li > a {
+ transform: translateY(0);
+}
+.menu-trigger:hover > p {
+ transform: none;
+ opacity: 1;
+}
+
+/* Texto "MENU" */
+.menu-trigger > p {
+ color: #aaa;
+ margin-left: 1.5rem;
+ font-weight: bold;
+ letter-spacing: 0.12rem;
+ transition: all 0.4s ease;
+ opacity: 0;
+ font-size: 1.8rem;
+ z-index: 10;
+ margin-bottom: 0;
+}
+
+/* BARS (Ícone Hamburger) */
+.bars {
+ display: flex;
+ flex-direction: column;
+ width: 3rem;
+ height: 2.2rem;
+ align-items: center;
+ justify-content: space-between;
+ z-index: 10;
+}
+.bars > span {
+ width: 100%;
+ height: 0.4rem;
+ background: #666;
+ transition: all 0.4s ease;
+ transform-origin: center;
+}
+
+/* MENU (Painel) */
+.menu {
+ position: absolute;
+ top: 0;
+ right: 0;
+ background: #222;
+ height: 100vh;
+ border-left: 1px solid #444;
+ transform: translateX(100%);
+ transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+ padding: 5rem 5rem 5rem 10rem;
+ will-change: transform;
+}
+.menu > ul:hover > li:not(:hover) {
+ color: rgba(249, 249, 237, 0.5);
+}
+
+/* TEXTOS DO MENU */
+.menu > ul > li {
+ color: #f9f9ed;
+ font-size: 2.5rem;
+ cursor: pointer;
+ padding: 1rem 0;
+ width: 16rem;
+ overflow: hidden;
+}
+.menu > ul > li:first-of-type {
+ padding-top: 0;
+}
+.menu > ul > li:last-of-type {
+ padding-bottom: 0;
+}
+
+/* Animações de entrada dos itens do menu */
+.menu > ul > li:nth-of-type(1) > a {
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s,
+ color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(2) > a {
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s,
+ color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(3) > a {
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s,
+ color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(4) > a {
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s,
+ color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(5) > a {
+ transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s,
+ color 0.2s ease;
+}
+
+/* Estilos dos links do menu */
+.menu > ul > li > a {
+ display: block;
+ color: inherit;
+ text-decoration: none;
+ transform: translateY(calc(100% + 1rem));
+}
+
+.about-bg {
+    background: linear-gradient(to bottom right, #0a0a2a, #175f88, #0b3d60);
+}
+
+.explication-content {
+    text-align: center;
+    padding-top: 20rem;
+    color: #fff;
+}
+
+.explication-content h2 {
+  font-size: 6rem;
+  color: #f9f9ed;
+  margin-bottom: 4rem;
+}
+
+.explication-content p {
+  font-size: 3rem;
+  color: #f1eded;
+}
