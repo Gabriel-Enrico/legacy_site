@@ -516,24 +516,30 @@ p {
  gap: 3rem;
  justify-items: center;
  align-items: stretch;
- max-width: 1200px;
+ max-width: 120rem;
  margin: 0 auto;
  padding: 0 2rem;
 }
 
+/* -------------------------------------------------
+ INÍCIO DA SEÇÃO ATUALIZADA (COM CORREÇÃO)
+-------------------------------------------------
+*/
+
 .feature-card {
  background: #fff;
- padding: 3rem;
+ padding: 4.5rem 3rem; /* Padronizado */
  border-radius: 12px;
  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
  display: flex;
  flex-direction: column;
- align-items: center;
- text-align: left;
+ align-items: flex-start; /* <<< CORRIGIDO PARA A ESQUERDA */
+ text-align: left; /* Mantido o original da Home */
  transition: all 0.3s ease;
  border: 1px solid #eee;
  width: 100%;
- max-width: 36rem;
+ max-width: 30rem; /* Padronizado */
+ min-height: 35rem; /* Padronizado */
 }
 
 .feature-card:hover {
@@ -542,24 +548,29 @@ p {
 }
 
 .feature-card i {
- font-size: 3.6rem;
+ font-size: 6rem; /* Padronizado */
  color: #175f88;
- margin-bottom: 1.5rem;
+ margin-bottom: 2rem; /* Padronizado */
 }
 
 .feature-card h3 {
- font-size: 1.8rem;
+ font-size: 2.2rem; /* Padronizado */
  font-weight: 700;
  color: #111;
- margin-bottom: 0.8rem;
+ margin-bottom: 1.5rem; /* Padronizado */
 }
 
 .feature-card p {
- font-size: 1.5rem;
+ font-size: 1.8rem; /* Padronizado */
  color: #555;
- line-height: 1.6;
+ line-height: 1.7; /* Padronizado */
  margin: 0;
 }
+
+/* -------------------------------------------------
+ FIM DA SEÇÃO ATUALIZADA
+-------------------------------------------------
+*/
 
 .cta-jorney {
   text-align: center;
@@ -682,10 +693,28 @@ p {
  border-top: 1px solid #333;
 }
 
-.footer-bottom p {
+.footer-bottom p.copyright {
  font-size: 1.6rem;
  margin-bottom: 0;
  color: #777;
+}
+
+.footer-credits {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.footer-credits p {
+    margin-bottom: 1rem;
+}
+
+.footer-credits p.institution {
+    font-size: 1.7rem;
+    color: #f1eded;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
 
 @media (min-width: 1024px) and (max-width: 1444px) {
@@ -719,6 +748,7 @@ p {
   max-width: 440px;
   border: 1px solid #eee;
   transition: all 0.3s ease;
+  min-height: auto; /* Resetando a altura mínima no media query */
  }
 
  .feature-card:hover {
