@@ -5,7 +5,7 @@
 --shiny-cta-bg: #000000;
 --shiny-cta-bg-subtle: #1a1818;
 --shiny-cta-fg: #ffffff;
---shiny-cta-highlight: #0077ff; /* NOVO - Azul vibrante */
+--shiny-cta-highlight: #0077ff;
 --shiny-cta-highlight-subtle: #00bfff;
 }
 
@@ -83,7 +83,6 @@ p {
  padding: 8rem;
 }
 
-/* Estilos da Navbar */
 .navbar {
  position: fixed;
  top: 0;
@@ -96,7 +95,6 @@ p {
  padding: 0 2rem;
 }
 
-/* Estilos do texto/logo centralizado */
 .navbar-brand {
  position: absolute;
  top: 50%;
@@ -105,7 +103,6 @@ p {
  color: #f9f9ed;
 }
 
-/* LOGO */
 .navbar-brand > a {
  margin: 0;
  font-size: 3rem;
@@ -125,7 +122,6 @@ p {
  background-position: 0% 0;
 }
 
-/* Estilos NO TRIGGER */
 .menu-trigger {
  position: absolute;
  top: 0;
@@ -140,7 +136,6 @@ p {
  z-index: 11;
 }
 
-/* Animações de hover do trigger */
 .menu-trigger:hover > .bars > span:first-of-type {
  transform: translateY(0.9rem) rotate(45deg);
 }
@@ -161,7 +156,6 @@ p {
  opacity: 1;
 }
 
-/* Texto "MENU" */
 .menu-trigger > p {
  color: #aaa;
  margin-left: 1.5rem;
@@ -174,7 +168,6 @@ p {
  margin-bottom: 0;
 }
 
-/* BARS (Ícone Hamburger) */
 .bars {
  display: flex;
  flex-direction: column;
@@ -192,7 +185,6 @@ p {
  transform-origin: center;
 }
 
-/* MENU (Painel) */
 .menu {
  position: absolute;
  top: 0;
@@ -209,7 +201,6 @@ p {
  color: rgba(249, 249, 237, 0.5);
 }
 
-/* TEXTOS DO MENU */
 .menu > ul > li {
  color: #f9f9ed;
  font-size: 2.5rem;
@@ -225,7 +216,6 @@ p {
  padding-bottom: 0;
 }
 
-/* Animações de entrada dos itens do menu */
 .menu > ul > li:nth-of-type(1) > a {
  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s,
  color 0.2s ease;
@@ -247,7 +237,6 @@ p {
  color 0.2s ease;
 }
 
-/* Estilos dos links do menu */
 .menu > ul > li > a {
  display: block;
  color: inherit;
@@ -280,67 +269,52 @@ p {
     background: #f1eded;
 }
 
-.history-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-}
 
-.history-text {
+/* === INÍCIO DAS MUDANÇAS === */
+/* Esta é a nova estrutura para a seção de história */
+
+/* 1. O wrapper do texto */
+.history-text-wrapper {
+    max-width: 90rem; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto 6rem auto; /* Centraliza e adiciona espaço abaixo */
     font-size: 2.5rem;
     line-height: 1.6;
 }
 
-.history-text h3 {
+.history-text-wrapper h3 {
     font-size: 6rem;
     margin-bottom: 5rem;
-    text-align: left;
+    text-align: center; /* Centraliza o título */
 }
 
-.history-text p {
+.history-text-wrapper p {
     margin-bottom: 2rem;
     text-align: justify;
 }
 
-/* Estilos do Carrossel */
-.history-carousel {
+/* 2. A galeria de imagens */
+.history-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+    gap: 2.5rem;
+}
+
+.history-gallery img {
     width: 100%;
-    height: 30rem;
-    overflow: hidden;
+    height: 30rem; /* Altura fixa para todas as imagens */
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel-track {
-    display: flex;
-    width: 400%;
-    height: 100%;
-    animation: scroll-carousel 15s linear infinite;
+.history-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-slide {
-    width: 25%;
-    height: 100%;
-    flex-shrink: 0;
-}
+/* === FIM DAS MUDANÇAS === */
 
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Animação do Carrossel */
-@keyframes scroll-carousel {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        /* Move 3 slides para a esquerda (3 * 100% = 300%) */
-        transform: translateX(-300%);
-    }
-}
 
 .values-bg {
     background: #f1eded;
@@ -458,12 +432,9 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-
     background: #175f88;
     z-index: 1;
-
     transform: translateX(-100%);
-
     transition: transform 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
@@ -474,6 +445,104 @@ p {
 .differential-item:hover::before {
     transform: translateX(0);
 }
+
+/* ==================
+   ESTILOS DOS VÍDEOS (ATUALIZADO)
+===================== */
+
+.videos-bg {
+  background: #f1eded;
+  padding: 8rem 0;
+}
+
+.videos-title {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.videos-title h2 {
+  font-size: 5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.videos-title p {
+  font-size: 2rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.videos-grid {
+  display: grid;
+  /* Layout assimétrico: coluna da esquerda é 1.2x maior */
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  max-width: 120rem; /* Aumentado para o novo layout */
+  margin: 0 auto;
+  align-items: start; /* Alinha os itens no topo */
+}
+
+/* Item de vídeo genérico (card ou vídeo) */
+.video-item {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* O card da direita que contém texto e vídeo */
+.video-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card-text {
+  padding: 3rem;
+}
+
+.video-card-text h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.video-card-text p {
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Wrapper responsivo para 16:9 */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Garante que o vídeo de cima no card não tenha borda redonda */
+.video-card .video-wrapper {
+  border-radius: 0;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 .footer-bg {
   background: #111;
@@ -578,25 +647,42 @@ p {
 
 @media (max-width: 992px) {
     .main-content {
-        width: 85%; /* Ocupa mais espaço em telas menores */
+        width: 85%;
     }
-    .history-container {
-        grid-template-columns: 1fr; /* Stacks a 2 colunas */
-        gap: 4rem;
+
+    /* Faz a galeria ter 2 colunas no tablet */
+    .history-gallery {
+        grid-template-columns: 1fr 1fr;
     }
-    .history-text h3 {
-        text-align: center; /* Centraliza o título no mobile */
+
+    /* A 3a imagem (ímpar) ocupa a largura total */
+    .history-gallery img:last-child:nth-child(odd) {
+        grid-column: 1 / 3;
     }
+
     .features-grid {
-        grid-template-columns: 1fr 1fr; /* 2 colunas nos cards */
+        grid-template-columns: 1fr 1fr;
     }
     .footer-grid {
-        grid-template-columns: 1fr; /* Stacks no footer */
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    /* Faz a galeria ter 1 coluna no celular */
+    .history-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .history-gallery img:last-child:nth-child(odd) {
+        grid-column: auto; /* Reseta do tablet */
+    }
+
     .features-grid {
-        grid-template-columns: 1fr; /* 1 coluna nos cards */
+        grid-template-columns: 1fr;
+    }
+
+    .videos-grid {
+      grid-template-columns: 1fr;
     }
 }

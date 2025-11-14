@@ -1,0 +1,486 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Abel', sans-serif;
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background: #0d0d0d;
+  z-index: 20;
+  font-family: 'Abel', sans-serif;
+  padding: 0 2rem;
+}
+.navbar-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar-brand > a {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #666, #f9f9ed, #666);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 0.5s ease-out;
+}
+.navbar-brand > a:hover { background-position: 0% 0; }
+.menu-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  z-index: 21;
+}
+.menu-trigger:hover > .bars > span:first-of-type { transform: translateY(0.9rem) rotate(45deg); }
+.menu-trigger:hover > .bars > span:nth-of-type(2) { opacity: 0; }
+.menu-trigger:hover > .bars > span:last-of-type { transform: translateY(-0.9rem) rotate(-45deg); }
+.menu-trigger:hover > .menu { transform: translateX(0); }
+.menu-trigger:hover > .menu > ul > li > a { transform: translateY(0); }
+.menu-trigger:hover > p { transform: none; opacity: 1; }
+.menu-trigger > p {
+  color: #aaa;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  transition: all 0.4s ease;
+  opacity: 0;
+  font-size: 1.8rem;
+  z-index: 10;
+  margin-bottom: 0;
+}
+.bars {
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  height: 2.2rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+.bars > span {
+  width: 100%;
+  height: 0.4rem;
+  background: #666;
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #0d0d0d;
+  height: 100vh;
+  border-left: 1px solid #222;
+  transform: translateX(100%);
+  transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  padding: 5rem 5rem 5rem 10rem;
+  will-change: transform;
+  z-index: 20;
+}
+.menu > ul:hover > li:not(:hover) { color: rgba(249, 249, 237, 0.5); }
+.menu > ul > li {
+  color: #f9f9ed;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 16rem;
+  overflow: hidden;
+}
+.menu > ul > li:first-of-type { padding-top: 0; }
+.menu > ul > li:last-of-type { padding-bottom: 0; }
+.menu > ul > li a { color: inherit; display: block; }
+.menu > ul > li:nth-of-type(1) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s, color 0.2s ease; }
+.menu > ul > li:nth-of-type(2) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s, color 0.2s ease; }
+.menu > ul > li:nth-of-type(3) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s, color 0.2s ease; }
+.menu > ul > li:nth-of-type(4) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s, color 0.2s ease; }
+.menu > ul > li:nth-of-type(5) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, color 0.2s ease; }
+.menu > ul > li > a { transform: translateY(calc(100% + 1rem)); }
+
+.professors-section {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.main-content {
+  width: 70%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8rem 0;
+}
+
+.professors-title {
+  text-align: left;
+  margin-bottom: 6rem;
+}
+
+.professors-title h2 {
+  font-size: 5rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.professors-title p {
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.professors-layout-compact {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 6rem;
+  position: relative;
+}
+
+.professors-list {
+  grid-column: 1 / 2;
+}
+
+.professors-list ul {
+  list-style: none;
+  border-top: 1px solid #444;
+}
+
+.professor-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.professor-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.prof-number {
+  font-size: 1.6rem;
+  color: #777;
+  margin-right: 2rem;
+}
+
+.prof-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #888;
+  line-height: 1.1;
+  transition: color 0.4s ease;
+}
+
+.prof-belt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+
+  margin-left: auto;
+  white-space: nowrap;
+  padding: 0.6rem 1.2rem;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 4px;
+
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+
+  opacity: 0;
+  transform: translateX(2rem);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.prof-belt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--belt-color, #333);
+  z-index: -2;
+}
+
+.prof-belt::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.8rem;
+  height: 100%;
+  background-color: var(--tip-color, transparent);
+  z-index: -1;
+}
+
+.belt-brown { --belt-color: #5c4033; --tip-color: transparent; }
+.belt-black-2 { --belt-color: #0d0d0d; --tip-color: #f1f1f1; }
+.belt-black-6 { --belt-color: #b22222; --tip-color: #0d0d0d; }
+
+.professor-item:hover {
+  background: #2a2a2a;
+}
+
+.professor-item:hover .prof-name {
+  color: #175f88;
+}
+
+.professor-item:hover .prof-belt {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.professors-image-preview {
+  grid-column: 2 / 3;
+  position: sticky;
+  top: 15rem;
+
+  height: 50rem;
+
+  width: 100%;
+  overflow: hidden;
+  background: #222;
+  border-radius: 12px;
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    width: 90%;
+  }
+  .professors-layout-compact {
+     gap: 3rem;
+  }
+  .prof-name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .professors-layout-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .professors-list {
+    grid-column: 1 / 2;
+  }
+
+  .professors-image-preview {
+    display: none;
+  }
+
+  .prof-name {
+    font-size: 3rem;
+    color: #e0e0e0;
+  }
+
+  .professor-item {
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: #222;
+    margin-bottom: 1px;
+    border-bottom: none;
+  }
+
+  .prof-belt {
+    margin-left: 0;
+    padding-left: 1.2rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* === INÍCIO DAS REGRAS ATUALIZADAS === */
+
+/* Fundo da Seção de Qualificações */
+.qualifications-bg {
+  background: #111;
+  padding: 8rem 0;
+  /* Garante que a seção ocupe espaço */
+  min-height: 50vh;
+}
+
+/* Título da Seção */
+.qualifications-title {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.qualifications-title h2 {
+  font-size: 5rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
+/* Grid para os Cards */
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+/* O Contêiner do Card (para perspectiva 3D) */
+.flip-card {
+  background-color: transparent;
+  height: 40rem;
+  perspective: 1000px; /* Efeito 3D */
+  cursor: pointer;
+}
+
+/* O Miolo do Card (que vira) */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Efeito de Virar */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Estilo Comum (Frente e Verso) */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+/* Estilo da Frente */
+.flip-card-front {
+  background: #2a2a2a; /* Um cinza escuro */
+  border: 1px solid #444;
+}
+
+.flip-card-front i {
+  font-size: 6rem;
+  color: #175f88; /* Cor de destaque */
+  margin-bottom: 2rem;
+}
+
+.flip-card-front h3 {
+  font-size: 3rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.flip-card-front p {
+  font-size: 1.6rem;
+  color: #888;
+}
+
+/* Estilo do Verso */
+.flip-card-back {
+  background: #222; /* Um pouco mais escuro que a frente */
+  border: 1px solid #555;
+  transform: rotateY(180deg);
+  align-items: flex-start; /* Alinha a lista à esquerda */
+  text-align: left;
+}
+
+.flip-card-back h3 {
+  font-size: 2.5rem;
+  color: #175f88;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.qualification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.qualification-list li {
+  font-size: 1.8rem;
+  font-family: 'Abel', sans-serif;
+  color: #bbb;
+  padding: 1rem 0;
+}
+
+
+/* Responsividade para os Flip Cards */
+@media (max-width: 768px) {
+  .qualifications-grid {
+    grid-template-columns: 1fr; /* Empilha os cards */
+    gap: 3rem;
+  }
+
+  .flip-card {
+    height: 35rem; /* Altura menor no mobile */
+  }
+
+  /* Em vez de virar, o mobile pode mostrar os dois (ou simplificar) */
+  /* Para simplificar, vamos desabilitar o flip no mobile */
+  .flip-card:hover .flip-card-inner {
+     transform: none; /* Desabilita o flip */
+  }
+  .flip-card-front {
+     cursor: default;
+  }
+  .flip-card-back {
+    display: none; /* Esconde o verso no mobile */
+  }
+  .flip-card-front p {
+    display: none; /* Esconde o "(passe o mouse)" */
+  }
+}
