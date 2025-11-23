@@ -23,6 +23,7 @@ a {
   color: inherit;
 }
 
+/* === NAVBAR === */
 .navbar {
   position: fixed;
   top: 0;
@@ -54,6 +55,7 @@ a {
   transition: background-position 0.5s ease-out;
 }
 .navbar-brand > a:hover { background-position: 0% 0; }
+
 .menu-trigger {
   position: absolute;
   top: 0;
@@ -132,6 +134,7 @@ a {
 .menu > ul > li:nth-of-type(5) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, color 0.2s ease; }
 .menu > ul > li > a { transform: translateY(calc(100% + 1rem)); }
 
+/* === SEÇÃO PROFESSORES === */
 .professors-section {
   padding-top: 10rem;
   padding-bottom: 8rem;
@@ -177,15 +180,17 @@ a {
   border-top: 1px solid #444;
 }
 
+/* === ITEM PROFESSOR === */
 .professor-item {
   position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding: 3rem 2rem;
   border-bottom: 1px solid #444;
   transition: background-color 0.3s ease;
   cursor: pointer;
   overflow: hidden;
+  width: 100%;
 }
 
 .professor-item > * {
@@ -197,6 +202,7 @@ a {
   font-size: 1.6rem;
   color: #777;
   margin-right: 2rem;
+  flex-shrink: 0;
 }
 
 .prof-name {
@@ -205,7 +211,8 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   color: #888;
-  line-height: 1.1;
+  line-height: 1;
+  margin-right: 2rem;
   transition: color 0.4s ease;
 }
 
@@ -217,11 +224,12 @@ a {
 
   margin-left: auto;
   white-space: nowrap;
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.6rem;
+  padding-right: 2.6rem;
 
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 4px;
 
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
@@ -229,6 +237,10 @@ a {
   opacity: 0;
   transform: translateX(2rem);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+
+  display: flex;
+  align-items: center;
+  height: fit-content;
 }
 
 .prof-belt::before {
@@ -240,6 +252,7 @@ a {
   height: 100%;
   background-color: var(--belt-color, #333);
   z-index: -2;
+  border-radius: 4px;
 }
 
 .prof-belt::after {
@@ -251,6 +264,8 @@ a {
   height: 100%;
   background-color: var(--tip-color, transparent);
   z-index: -1;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .belt-brown { --belt-color: #5c4033; --tip-color: transparent; }
@@ -270,19 +285,54 @@ a {
   transform: translateX(0);
 }
 
+/* === PREVIEW DE IMAGEM E LEGENDA === */
 .professors-image-preview {
   grid-column: 2 / 3;
   position: sticky;
   top: 15rem;
-
   height: 50rem;
-
   width: 100%;
   overflow: hidden;
   background: #222;
   border-radius: 12px;
 }
 
+.professor-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 2rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7) 60%, transparent);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.professor-caption.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.professor-caption h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #175f88;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.professor-caption p {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+/* === MEDIA QUERIES === */
 @media (max-width: 992px) {
   .main-content {
     width: 90%;
@@ -299,20 +349,16 @@ a {
   .professors-layout-compact {
     grid-template-columns: 1fr;
   }
-
   .professors-list {
     grid-column: 1 / 2;
   }
-
   .professors-image-preview {
     display: none;
   }
-
   .prof-name {
     font-size: 3rem;
     color: #e0e0e0;
   }
-
   .professor-item {
     flex-wrap: wrap;
     padding: 2rem;
@@ -320,29 +366,98 @@ a {
     margin-bottom: 1px;
     border-bottom: none;
   }
-
   .prof-belt {
     margin-left: 0;
     padding-left: 1.2rem;
     width: fit-content;
     margin-top: 0.5rem;
-
     opacity: 1;
     transform: none;
   }
 }
 
-/* === INÍCIO DAS REGRAS ATUALIZADAS === */
+/* === SEÇÃO FILOSOFIA (NOVA) === */
+.philosophy-section {
+  background-color: #151515;
+  padding: 10rem 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
 
-/* Fundo da Seção de Qualificações */
+.philosophy-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.philosophy-header {
+  text-align: right;
+  border-right: 4px solid #175f88;
+  padding-right: 4rem;
+}
+
+.philosophy-header i {
+  font-size: 5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.philosophy-header h2 {
+  font-size: 4rem;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.philosophy-content p {
+  font-family: 'Abel', sans-serif;
+  font-size: 2.2rem;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.philosophy-content p:first-of-type::first-letter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5rem;
+  color: #175f88;
+  float: left;
+  margin-right: 1rem;
+  line-height: 0.8;
+  font-weight: 900;
+}
+
+/* Responsividade Filosofia */
+@media (max-width: 768px) {
+  .philosophy-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .philosophy-header {
+    text-align: left;
+    border-right: none;
+    border-left: 4px solid #175f88;
+    padding-right: 0;
+    padding-left: 2rem;
+  }
+  .philosophy-header h2 {
+    font-size: 3rem;
+  }
+  .philosophy-content p {
+    font-size: 1.8rem;
+  }
+}
+
+/* === QUALIFICAÇÕES (Flip Cards) === */
 .qualifications-bg {
   background: #111;
   padding: 8rem 0;
-  /* Garante que a seção ocupe espaço */
   min-height: 50vh;
 }
 
-/* Título da Seção */
 .qualifications-title {
   text-align: center;
   margin-bottom: 6rem;
@@ -354,7 +469,6 @@ a {
   margin-bottom: 0;
 }
 
-/* Grid para os Cards */
 .qualifications-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -363,15 +477,13 @@ a {
   margin: 0 auto;
 }
 
-/* O Contêiner do Card (para perspectiva 3D) */
 .flip-card {
   background-color: transparent;
   height: 40rem;
-  perspective: 1000px; /* Efeito 3D */
+  perspective: 1000px;
   cursor: pointer;
 }
 
-/* O Miolo do Card (que vira) */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -380,18 +492,16 @@ a {
   transform-style: preserve-3d;
 }
 
-/* Efeito de Virar */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Estilo Comum (Frente e Verso) */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 12px;
   display: flex;
@@ -402,15 +512,14 @@ a {
   text-align: center;
 }
 
-/* Estilo da Frente */
 .flip-card-front {
-  background: #2a2a2a; /* Um cinza escuro */
+  background: #2a2a2a;
   border: 1px solid #444;
 }
 
 .flip-card-front i {
   font-size: 6rem;
-  color: #175f88; /* Cor de destaque */
+  color: #175f88;
   margin-bottom: 2rem;
 }
 
@@ -425,12 +534,11 @@ a {
   color: #888;
 }
 
-/* Estilo do Verso */
 .flip-card-back {
-  background: #222; /* Um pouco mais escuro que a frente */
+  background: #222;
   border: 1px solid #555;
   transform: rotateY(180deg);
-  align-items: flex-start; /* Alinha a lista à esquerda */
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -457,30 +565,124 @@ a {
   padding: 1rem 0;
 }
 
+/* === FOOTER === */
+.footer-bg {
+  background: #111;
+  color: #aaa;
+  padding: 6rem 0 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-grid h4 {
+  font-size: 2rem;
+  color: #f9f9ed;
+  margin-bottom: 2rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.footer-grid p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-contact p {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  font-size: 1.6rem;
+  color: #f9f9ed;
+  margin-right: 1.2rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.footer-social a {
+  color: #aaa;
+  font-size: 2.8rem;
+  margin-right: 1.5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1);
+}
+
+.footer-social a[aria-label="Instagram"]:hover {
+  color: #E1306C;
+  text-shadow: 0 0 8px #E1306C, 0 0 12px #E1306C;
+}
+
+.footer-social a[aria-label="Facebook"]:hover {
+  color: #1877F2;
+  text-shadow: 0 0 8px #1877F2, 0 0 12px #1877F2;
+}
+
+.footer-social a[aria-label="YouTube"]:hover {
+  color: #FF0000;
+  text-shadow: 0 0 8px #FF0000, 0 0 12px #FF0000;
+}
+
+.footer-bottom {
+ text-align: center;
+ padding-top: 3rem;
+ border-top: 1px solid #333;
+}
+
+.footer-bottom p.copyright {
+ font-size: 1.6rem;
+ margin-bottom: 0;
+ color: #777;
+}
+
+.footer-credits {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.footer-credits p {
+    margin-bottom: 1rem;
+}
+
+.footer-credits p.institution {
+    font-size: 1.7rem;
+    color: #f1eded;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
 
 /* Responsividade para os Flip Cards */
 @media (max-width: 768px) {
   .qualifications-grid {
-    grid-template-columns: 1fr; /* Empilha os cards */
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
-
   .flip-card {
-    height: 35rem; /* Altura menor no mobile */
+    height: 35rem;
   }
-
-  /* Em vez de virar, o mobile pode mostrar os dois (ou simplificar) */
-  /* Para simplificar, vamos desabilitar o flip no mobile */
   .flip-card:hover .flip-card-inner {
-     transform: none; /* Desabilita o flip */
+     transform: none;
   }
   .flip-card-front {
      cursor: default;
   }
   .flip-card-back {
-    display: none; /* Esconde o verso no mobile */
+    display: none;
   }
   .flip-card-front p {
-    display: none; /* Esconde o "(passe o mouse)" */
+    display: none;
   }
 }
