@@ -562,16 +562,11 @@ p {
 }
 
 .feature-card p {
-  font-size: 1.8rem; /* Padronizado */
+  font-size: 1.8rem;
   color: #555;
-  line-height: 1.7; /* Padronizado */
+  line-height: 1.7;
   margin: 0;
 }
-
-/* -------------------------------------------------
- FIM DA SEÇÃO ATUALIZADA
--------------------------------------------------
-*/
 
 .cta-jorney {
   text-align: center;
