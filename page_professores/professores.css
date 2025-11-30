@@ -9,12 +9,17 @@
 }
 
 body {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   background: #1a1a1a;
   color: #e0e0e0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -32,7 +37,7 @@ a {
   height: 10rem;
   background: #0d0d0d;
   z-index: 20;
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   padding: 0 2rem;
 }
 .navbar-brand {
@@ -54,7 +59,9 @@ a {
   color: transparent;
   transition: background-position 0.5s ease-out;
 }
-.navbar-brand > a:hover { background-position: 0% 0; }
+.navbar-brand > a:hover {
+  background-position: 0% 0;
+}
 
 .menu-trigger {
   position: absolute;
@@ -69,12 +76,25 @@ a {
   padding: 0 2rem;
   z-index: 21;
 }
-.menu-trigger:hover > .bars > span:first-of-type { transform: translateY(0.9rem) rotate(45deg); }
-.menu-trigger:hover > .bars > span:nth-of-type(2) { opacity: 0; }
-.menu-trigger:hover > .bars > span:last-of-type { transform: translateY(-0.9rem) rotate(-45deg); }
-.menu-trigger:hover > .menu { transform: translateX(0); }
-.menu-trigger:hover > .menu > ul > li > a { transform: translateY(0); }
-.menu-trigger:hover > p { transform: none; opacity: 1; }
+.menu-trigger:hover > .bars > span:first-of-type {
+  transform: translateY(0.9rem) rotate(45deg);
+}
+.menu-trigger:hover > .bars > span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger:hover > .bars > span:last-of-type {
+  transform: translateY(-0.9rem) rotate(-45deg);
+}
+.menu-trigger:hover > .menu {
+  transform: translateX(0);
+}
+.menu-trigger:hover > .menu > ul > li > a {
+  transform: translateY(0);
+}
+.menu-trigger:hover > p {
+  transform: none;
+  opacity: 1;
+}
 .menu-trigger > p {
   color: #aaa;
   margin-left: 1.5rem;
@@ -115,7 +135,9 @@ a {
   will-change: transform;
   z-index: 20;
 }
-.menu > ul:hover > li:not(:hover) { color: rgba(249, 249, 237, 0.5); }
+.menu > ul:hover > li:not(:hover) {
+  color: rgba(249, 249, 237, 0.5);
+}
 .menu > ul > li {
   color: #f9f9ed;
   font-size: 2.5rem;
@@ -124,15 +146,39 @@ a {
   width: 16rem;
   overflow: hidden;
 }
-.menu > ul > li:first-of-type { padding-top: 0; }
-.menu > ul > li:last-of-type { padding-bottom: 0; }
-.menu > ul > li a { color: inherit; display: block; }
-.menu > ul > li:nth-of-type(1) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s, color 0.2s ease; }
-.menu > ul > li:nth-of-type(2) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s, color 0.2s ease; }
-.menu > ul > li:nth-of-type(3) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s, color 0.2s ease; }
-.menu > ul > li:nth-of-type(4) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s, color 0.2s ease; }
-.menu > ul > li:nth-of-type(5) > a { transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, color 0.2s ease; }
-.menu > ul > li > a { transform: translateY(calc(100% + 1rem)); }
+.menu > ul > li:first-of-type {
+  padding-top: 0;
+}
+.menu > ul > li:last-of-type {
+  padding-bottom: 0;
+}
+.menu > ul > li a {
+  color: inherit;
+  display: block;
+}
+.menu > ul > li:nth-of-type(1) > a {
+  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s,
+    color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(2) > a {
+  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s,
+    color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(3) > a {
+  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s,
+    color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(4) > a {
+  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.4s,
+    color 0.2s ease;
+}
+.menu > ul > li:nth-of-type(5) > a {
+  transition: transform 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s,
+    color 0.2s ease;
+}
+.menu > ul > li > a {
+  transform: translateY(calc(100% + 1rem));
+}
 
 /* === SEÇÃO PROFESSORES === */
 .professors-section {
@@ -194,8 +240,8 @@ a {
 }
 
 .professor-item > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .prof-number {
@@ -206,7 +252,7 @@ a {
 }
 
 .prof-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 4rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -217,7 +263,7 @@ a {
 }
 
 .prof-belt {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
@@ -232,7 +278,7 @@ a {
   overflow: visible;
   border-radius: 4px;
 
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 
   opacity: 0;
   transform: translateX(2rem);
@@ -244,7 +290,7 @@ a {
 }
 
 .prof-belt::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -256,7 +302,7 @@ a {
 }
 
 .prof-belt::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -268,9 +314,18 @@ a {
   border-bottom-right-radius: 4px;
 }
 
-.belt-brown { --belt-color: #5c4033; --tip-color: transparent; }
-.belt-black-2 { --belt-color: #0d0d0d; --tip-color: #f1f1f1; }
-.belt-black-6 { --belt-color: #b22222; --tip-color: #0d0d0d; }
+.belt-brown {
+  --belt-color: #5c4033;
+  --tip-color: transparent;
+}
+.belt-black-2 {
+  --belt-color: #0d0d0d;
+  --tip-color: #f1f1f1;
+}
+.belt-black-6 {
+  --belt-color: #b22222;
+  --tip-color: #0d0d0d;
+}
 
 .professor-item:hover {
   background: #2a2a2a;
@@ -303,7 +358,12 @@ a {
   left: 0;
   width: 100%;
   padding: 4rem 2rem 2rem 2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7) 60%, transparent);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.7) 60%,
+    transparent
+  );
   color: #fff;
   opacity: 0;
   transform: translateY(20px);
@@ -318,7 +378,7 @@ a {
 }
 
 .professor-caption h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   color: #175f88;
   margin-bottom: 0.5rem;
@@ -326,7 +386,7 @@ a {
 }
 
 .professor-caption p {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 1.8rem;
   line-height: 1.4;
   color: #e0e0e0;
@@ -338,7 +398,7 @@ a {
     width: 90%;
   }
   .professors-layout-compact {
-     gap: 3rem;
+    gap: 3rem;
   }
   .prof-name {
     font-size: 3rem;
@@ -412,7 +472,7 @@ a {
 }
 
 .philosophy-content p {
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 2.2rem;
   color: #aaa;
   line-height: 1.8;
@@ -421,7 +481,7 @@ a {
 }
 
 .philosophy-content p:first-of-type::first-letter {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 5rem;
   color: #175f88;
   float: left;
@@ -453,7 +513,7 @@ a {
 
 /* === QUALIFICAÇÕES (Flip Cards) === */
 .qualifications-bg {
-  background: #111;
+  background: #e0e0e0;
   padding: 8rem 0;
   min-height: 50vh;
 }
@@ -465,7 +525,7 @@ a {
 
 .qualifications-title h2 {
   font-size: 5rem;
-  color: #e0e0e0;
+  color: #111;
   margin-bottom: 0;
 }
 
@@ -560,7 +620,7 @@ a {
 
 .qualification-list li {
   font-size: 1.8rem;
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   color: #bbb;
   padding: 1rem 0;
 }
@@ -600,6 +660,18 @@ a {
   align-items: center;
 }
 
+.footer-contact a {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #f9f9ed;
+}
+
 .footer-contact i {
   font-size: 1.6rem;
   color: #f9f9ed;
@@ -620,48 +692,38 @@ a {
 }
 
 .footer-social a[aria-label="Instagram"]:hover {
-  color: #E1306C;
-  text-shadow: 0 0 8px #E1306C, 0 0 12px #E1306C;
-}
-
-.footer-social a[aria-label="Facebook"]:hover {
-  color: #1877F2;
-  text-shadow: 0 0 8px #1877F2, 0 0 12px #1877F2;
-}
-
-.footer-social a[aria-label="YouTube"]:hover {
-  color: #FF0000;
-  text-shadow: 0 0 8px #FF0000, 0 0 12px #FF0000;
+  color: #e1306c;
+  text-shadow: 0 0 8px #e1306c, 0 0 12px #e1306c;
 }
 
 .footer-bottom {
- text-align: center;
- padding-top: 3rem;
- border-top: 1px solid #333;
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid #333;
 }
 
 .footer-bottom p.copyright {
- font-size: 1.6rem;
- margin-bottom: 0;
- color: #777;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+  color: #777;
 }
 
 .footer-credits {
-    margin-bottom: 3rem;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: #aaa;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #aaa;
 }
 
 .footer-credits p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-credits p.institution {
-    font-size: 1.7rem;
-    color: #f1eded;
-    margin-top: 1.5rem;
-    margin-bottom: 0;
+  font-size: 1.7rem;
+  color: #f1eded;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
 }
 
 /* Responsividade para os Flip Cards */
@@ -674,10 +736,10 @@ a {
     height: 35rem;
   }
   .flip-card:hover .flip-card-inner {
-     transform: none;
+    transform: none;
   }
   .flip-card-front {
-     cursor: default;
+    cursor: default;
   }
   .flip-card-back {
     display: none;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre nós</title>
+    <title>Sobre nós - Legacy Jiu-Jitsu</title>
     <link rel="stylesheet" href="about.css" />
     <link
       rel="stylesheet"
@@ -21,52 +21,59 @@
         <p>MENU</p>
         <div class="menu">
           <ul>
-            <li>
-              <a href="/home/index.html">Home</a>
-            </li>
-            <li>
-              <a href="/about/index.html">Quem Somos</a>
-            </li>
-            <li>
-              <a href="/page_professores/index.html">Professores</a>
-            </li>
-            <li>
-              <a href="#grade_horaria">Grade Horária</a>
-            </li>
-            <li>
-              <a href="#contato">Contato</a>
-            </li>
+            <li><a href="/home/index.html">Home</a></li>
+            <li><a href="/about/index.html">Quem Somos</a></li>
+            <li><a href="/page_professores/index.html">Professores</a></li>
+            <li><a href="/page_gradehoraria/index.html">Grade Horária</a></li>
+            <li><a href="/contact/index.html">Contato</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <section class="about-bg">
-      <div class="main-content explication-content">
-        <h2>Quem Somos</h2>
-        <p>
-          Uma história de dedicação, respeito e paixão pelo Jiu-Jitsu brasileiro
-        </p>
+    <section class="about-hero">
+      <div class="main-content">
+        <div class="hero-text-wrapper">
+          <h5 class="sub-heading">NOSSA ESSÊNCIA</h5>
+          <h1>QUEM <br /><span class="highlight">SOMOS</span></h1>
+          <p>
+            Uma história de dedicação, respeito e paixão pelo Jiu-Jitsu
+            brasileiro. Transformando vidas dentro e fora do tatame.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="history-bg">
-        <div class="main-content">
-
-            <div class="history-text-wrapper">
-                <h3>Nossa Jornada</h3>
-                <p>Fundada em 2010, a Legends Jiu-Jitsu nasceu do sonho de criar um espaço onde a arte suave pudesse ser praticada com excelência e respeito. Desde então, temos nos dedicado a formar não apenas atletas, mas também cidadãos exemplares.</p>
-                <p>Nossa equipe é composta por instrutores altamente qualificados, muitos dos quais são campeões mundiais e nacionais. Eles trazemos consigo uma riqueza de conhecimento e experiência que é compartilhada generosamente com nossos alunos.</p>
-                <p>Na Legends Jiu-Jitsu, acreditamos que o Jiu-Jitsu é mais do que um esporte; é um estilo de vida. Promovemos valores como disciplina, humildade e perseverança, que são essenciais tanto dentro quanto fora do tatame.</p>
-            </div>
-
-            <div class="history-gallery">
-                <img src="/img/carrosel1.jpeg" alt="Foto da equipe">
-                <img src="https://via.placeholder.com/400x300/222/fff?text=Imagem+Academia" alt="Foto da academia">
-                <img src="https://via.placeholder.com/400x300/8B0000/fff?text=Imagem+Pódio" alt="Foto de pódio">
-            </div>
-
+      <div class="main-content">
+        <div class="history-text-wrapper">
+          <h3>Nossa Jornada</h3>
+          <p>
+            Fundada em 2010, a Legends Jiu-Jitsu nasceu do sonho de criar um
+            espaço onde a arte suave pudesse ser praticada com excelência e
+            respeito. Desde então, temos nos dedicado a formar não apenas
+            atletas, mas também cidadãos exemplares.
+          </p>
+          <p>
+            Nossa equipe é composta por instrutores altamente qualificados,
+            muitos dos quais são campeões mundiais e nacionais. Eles trazem
+            consigo uma riqueza de conhecimento e experiência que é
+            compartilhada generosamente com nossos alunos.
+          </p>
+          <p>
+            Na Legends Jiu-Jitsu, acreditamos que o Jiu-Jitsu é mais do que um
+            esporte; é um estilo de vida. Promovemos valores como disciplina,
+            humildade e perseverança, que são essenciais tanto dentro quanto
+            fora do tatame.
+          </p>
         </div>
+
+        <div class="history-gallery">
+          <img src="/img/carrosel1.jpeg" alt="Foto da equipe" />
+          <img src="/img/carrosel2.jpeg" alt="Foto da academia" />
+          <img src="/img/carrosel3.jpeg" alt="Foto de pódio" />
+        </div>
+      </div>
     </section>
 
     <section class="values-bg">
@@ -158,28 +165,31 @@
 
         <div class="videos-grid">
           <div class="video-item">
-            <div class="video-wrapper">
-              <video controls loop muted playsinline poster="https://via.placeholder.com/1920x1080/111/fff?text=Carregando+V%C3%ADdeo...">
-                <source src="/video/demonstracao_tecnica.mp4" type="video/mp4">
+            <div class="video-wrapper-portrait">
+              <video controls loop muted playsinline poster="/img/poster1.jpg">
+                <source src="/video/aquecimento.mp4" type="video/mp4" />
                 Seu navegador não suporta o player de vídeo.
               </video>
             </div>
+            <div class="video-card-text">
+              <h3>Aquecimento</h3>
+              <p>Foco em deixar o corpo preparado para o treino</p>
+            </div>
           </div>
 
-          <!-- Vídeo 2 (Card com Texto) -->
           <div class="video-item video-card">
             <div class="video-card-text">
               <h3>Técnica em Foco</h3>
-              <p>Análise de movimentos e conceitos do nosso canal do YouTube.</p>
+              <p>Análise de movimentos e conceitos técnicos.</p>
             </div>
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/s-t0-r-i-cM"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+            <div class="video-wrapper-portrait">
+              <video controls loop playsinline poster="/img/poster2.jpg">
+                <source
+                  src="/video/demonstracao_tecnica.mp4"
+                  type="video/mp4"
+                />
+                Seu navegador não suporta o player de vídeo.
+              </video>
             </div>
           </div>
         </div>
@@ -190,7 +200,7 @@
       <div class="main-content">
         <div class="footer-grid">
           <div class="footer-about">
-            <h4>LEGENDS - JIU-JITSU LEGACY</h4>
+            <h4>LEGACY JIU-JITSU</h4>
             <p>
               Transformando corpo e mente com a arte do Jiu-Jitsu Brasileiro.
               Junte-se à nossa família.
@@ -199,20 +209,21 @@
 
           <div class="footer-contact">
             <h4>Contato</h4>
-            <p><i class="fas fa-phone"></i> (61) 99999-9999</p>
-            <p><i class="fas fa-envelope"></i> contato@legendsbjj.com.br</p>
-            <p><i class="fas fa-map-marker-alt"></i> Brasília, DF</p>
+            <a
+              href="http://api.whatsapp.com/send/?phone=5561981675756&text=Olá, gostaria de participar da Legacy-Jiu-Jitsu!"
+              target="_blank"
+              ><i class="fas fa-phone"></i>55 61 98167-5756</a
+            >
+            <p><i class="fas fa-envelope"></i> legacy.bjjtraining@gmail.com</p>
           </div>
 
           <div class="footer-social">
             <h4>Redes Sociais</h4>
-            <a href="#" aria-label="Instagram"
+            <a
+              href="https://www.instagram.com/rodrigo_blindado/"
+              aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
@@ -225,7 +236,7 @@
             <p class="institution">Universidade Católica de Brasília</p>
           </div>
           <p class="copyright">
-            &copy; 2025 Legends Jiu-Jitsu. Todos os direitos reservados.
+            &copy; 2025 Legacy Jiu-Jitsu. Todos os direitos reservados.
           </p>
         </div>
       </div>
